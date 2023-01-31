@@ -10,9 +10,9 @@ import { SessionService } from './session.service'
       useFactory(configService: ConfigService) {
         return {
           config: {
-            host: configService.get('host'),
-            port: configService.get('port'),
-            password: configService.get('password'),
+            host: configService.get<string>('redis_host'),
+            port: configService.get<number>('redis_port'),
+            password: configService.get<string>('redis_password'),
           },
         }
       },
@@ -20,5 +20,6 @@ import { SessionService } from './session.service'
     }),
   ],
   providers: [SessionService],
+  exports: [SessionService],
 })
 export class SessionModule {}

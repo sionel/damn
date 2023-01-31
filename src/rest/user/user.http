@@ -1,0 +1,15 @@
+POST http://localhost:3000/user HTTP/1.1
+Content-Type: application/json
+
+{"email":"김대@naver.com","name" :"김대"}
+
+
+###
+
+GET http://localhost:3000/user/sign/sadb0101@naver.com HTTP/1.1
+
+
+### 
+
+GET http://localhost:3000/user/김대@naver.com HTTP/1.1
+Cookie: email=sadb0101@naver.com
